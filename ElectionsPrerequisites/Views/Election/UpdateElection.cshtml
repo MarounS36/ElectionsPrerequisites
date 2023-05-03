@@ -1,0 +1,38 @@
+﻿@model ElectionsPrerequisites.Models.Dto.ElectionUpdateDTO
+
+<form asp-action="UpdateElection">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Election</h1>
+        <hr />
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-2">
+                <label asp-for="Id" class="control-label pt-2" style="font-size:20px;">
+                </label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Id" class=" form-control" readonly/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="ElectionName" class="control-label pt-2" style="font-size:20px;">
+                </label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="ElectionName" class=" form-control" />
+                <span asp-validation-for="ElectionName" class="text-danger"></span>
+            </div>
+            
+            <div class="col-5 offset-2">
+                <a asp-action="IndexElection" asp-controller="Election" class="btn btn-primary  form-control">Back to List</a>
+            </div>
+            <div class="col-5 ">
+                <input type="submit" value="Update" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
